@@ -1,25 +1,13 @@
+// DataCapturing.js
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
-import './styles/dataCapturing.css'; // Import your CSS file for styling
+import './styles/dataCapturing.css'; // Import the CSS file
 
 const DataCapturing = () => {
   const [formData, setFormData] = useState({
     GROWER_NO: '',
     SURNAME: '',
-    NAME_INITIALS: '',
-    NATIONAL_ID: '',
-    TEL_NO: '',
-    EMAIL: '',
-    POSTAL_ADDRESS1: '',
-    POSTAL_ADDRESS2: '',
-    FARM_NAME: '',
-    AREA_PROVINCE: '',
-    CURRENT_REG: '',
-    NEXT_REG: '',
-    CONTRACTOR: '',
-    HECTARES: '',
-    PROVINCE: '',
     // Add other fields as needed
   });
 
@@ -27,6 +15,7 @@ const DataCapturing = () => {
 
   useEffect(() => {
     // Check user authentication status when the component mounts
+    // You may need to adjust the authentication check based on your actual authentication mechanism
     const checkAuthentication = async () => {
       try {
         const response = await axios.get('http://localhost:8000/api/check-auth/');
@@ -61,23 +50,27 @@ const DataCapturing = () => {
   };
 
   return (
-    <div className="data-capturing-container">
+    <div className="container">
       {isLoggedIn ? (
-        <div className="data-capturing-form">
+        <div className="form-box">
           <h2>Data Capturing Form</h2>
           <form onSubmit={handleSubmit}>
-            {/* Repeat the input fields here */}
+            <label>
+              GROWER_NO:
+              <input type="text" name="GROWER_NO" value={formData.GROWER_NO} onChange={handleInputChange} />
+            </label>
+            {/* Add other form fields here */}
             <button type="submit">Capture Data</button>
           </form>
         </div>
       ) : (
-        <div className="login-prompt">
-          <p>Please log in to access the data capturing form.</p>
-          <div className="auth-links">
-            <a href="/login">Login</a>
-            <span className="auth-divider">|</span>
-            <a href="/register">Register</a>
-          </div>
+        <div className="form-box">
+          <h2>Login</h2>
+          <form>
+            {/* Login form fields go here */}
+            <button type="submit">Login</button>
+          </form>
+          <p>Don't have an account? <a href="/register">Register</a></p>
         </div>
       )}
     </div>

@@ -1,6 +1,13 @@
 # models.py
 from django.db import models
 import uuid
+from django.contrib.auth.models import User
+
+
+# models.py
+from django.db import models
+import uuid
+from django.contrib.auth.models import User
 
 
 class Client(models.Model):
@@ -18,13 +25,12 @@ class Client(models.Model):
     CURRENT_REG = models.CharField(max_length=50)
     NEXT_REG = models.CharField(max_length=50)
     CONTRACTOR = models.CharField(max_length=255)
-    HECTARES = models.DecimalField(max_digits=10, decimal_places=2)
+    HECTARES = models.DecimalField(max_digits=10.0, decimal_places=2)
     PROVINCE = models.CharField(max_length=50)
 
 
 class LoanStatement(models.Model):
-    client = models.ForeignKey(
-        Client, on_delete=models.CASCADE, related_name='loan_statements')
+    client = models.ForeignKey(Client, on_delete=models.CASCADE)
     LOAN_SCHEME = models.CharField(max_length=150)
     INPUT_TYPE = models.CharField(max_length=150)
     PRODUCT_CODE = models.CharField(max_length=20)
@@ -33,6 +39,7 @@ class LoanStatement(models.Model):
     UNITS_ISSUED = models.FloatField()
     CURRENCY = models.CharField(max_length=10)
     UNIT_PRICE = models.FloatField()
+    AMOUNT = models.CharField(max_length=10)
     INVOICE_AMOUNT = models.FloatField()
     CREDITOR_NO = models.CharField(max_length=20)
     RECEIPT_NO = models.CharField(max_length=20)

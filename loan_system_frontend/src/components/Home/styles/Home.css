@@ -3,6 +3,7 @@ body {
   margin: 0; /* Remove default body margin */
   background-image: url('./4844228.jpg'); 
   background-blend-mode: normal;
+  background-color: #000000;
   background-repeat: no-repeat;
   background-position: 0%;/* Replace with your image path */
   background: size 100px;
