@@ -1,0 +1,79 @@
+/* src/components/styles/Home.css */
+body {
+  margin: 0; /* Remove default body margin */
+  background-image: url('./4844228.jpg'); 
+  background-blend-mode: normal;
+  background-repeat: no-repeat;
+  background-position: 0%;/* Replace with your image path */
+  background: size 100px;
+  background-position: center;
+  color: #050505; /* Set text color to white for better visibility */
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+
+}
+
+.home-header {
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #3f3c3c; /* Add border at the bottom of the header */
+}
+
+.home-auth-links {
+  display: flex;
+  gap: 15px;
+}
+
+.home-auth-link {
+  text-decoration: none; /* Remove wavy text decoration */
+  text-align: center;
+  color: #000000; /* Change text color to white */
+  font-weight: bold;
+  border: 1px solid #1188d8; /* Add border to the login and register links */
+  padding: 5px 10px;
+  border-radius: 15px;
+  transition: background-color 0.3s ease; /* Add transition effect */
+}
+
+.home-auth-link:hover {
+  background-color: #1188d8; /* Change background color on hover */
+}
+
+.home-content-container {
+  text-align: center;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.home-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.home-content {
+  margin-bottom: 20px;
+}
+
+.home-link {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: #fbfcfd;
+  color: #160101;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.home-link:hover {
+  background-color: #088ae0; /* Change background color on hover */
+}
