@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
+    'rest_framework.authtoken',
     'core',
     'corsheaders',
     'django.contrib.admin',
@@ -39,8 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'rest_framework.authtoken',
+
 ]
 
 REST_FRAMEWORK = {
@@ -51,10 +52,10 @@ REST_FRAMEWORK = {
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -94,11 +95,11 @@ WSGI_APPLICATION = 'loan_system.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'chatbot',
+        'NAME': 'dcsapp',
         'USER': 'tjtech',
         'PASSWORD': '@Laiser1994',
-        'HOST': 'localhost',   # Change if your MySQL server is on a different host
-        'PORT': '3306',
+        'HOST': 'localhost',
+        'PORT': '3306',  # Change this to your MySQL server port
     }
 }
 

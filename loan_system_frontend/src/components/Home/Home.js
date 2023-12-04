@@ -29,7 +29,7 @@ const Home = () => {
         </p>
         <div className="home-link-container">
           <Link to="/capture" className="home-link">
-            Go to Data Capture
+            Data CAPTURING SYS
           </Link>
         </div>
       </div>

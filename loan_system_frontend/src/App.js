@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
-import DataCaptureForm from './components/dataCapture/DataCaptureForm';
+import DataCaptureForm from './components/DataCapturing/DataCaptureForm';
 import LoanStatementView from './components/views/LoanStatementView';
 
 const App = () => {
